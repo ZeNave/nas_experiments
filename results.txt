@@ -1,0 +1,113 @@
+-----------------------------------------------------------------------------------------------------------------------
+10 samples
+
+Cifar10
+
+acc_alpha_0.1:   [79.315, 81.555, 80.43]
+acc_alpha_rank:   [79.315, 81.555, 81.305]
+acc_kl_per_class:    [54.175, 81.555, 81.305]
+accepenas:   [79.315, 81.555, 80.43]
+acc_naswot:    [79.315, 81.555, 81.305]
+
+Cifar100
+
+acc_alpha_0.1:   [30.4, 58.8, 55.6]
+acc_alpha_rank:  [50.12, 56.16, 55.6]
+acc_kl_per_class:    [50.12, 58.8, 55.6]
+accepenas:   [30.4, 58.8, 55.6]
+acc_naswot:    [46.94, 56.16, 55.6]
+
+Image Net
+
+acc_alpha_0.1:   [12.8333, 36.8667, 29.6]
+acc_alpha_rank:   [12.8333, 36.8667, 29.6]
+acc_kl_per_class:    [27.333, 24.0, 23.0]
+accepenas:   [12.8333, 36.8667, 29.6]
+acc_naswot:    [12.8333, 33.5333, 17.8]
+-----------------------------------------------------------------------------------------------------------------------
+100 samples
+
+Cifar10
+
+acc_alpha_0.1:   [81.555, 81.685, 68.19]
+acc_alpha_rank: [81.555, 68.77, 74.505]
+acc_kl_per_class:    [82.545, 68.77, 74.505]
+accepenas:   [81.555, 81.685, 68.19]
+acc_naswot:    [74.365, 68.77, 74.505]
+
+Cifar100
+
+acc_alpha_0.1:  [41.08, 41.96, 49.18]
+acc_alpha_rank: [57.06, 57.24, 53.34]
+acc_kl_per_class:    [50.6, 50.66, 47.6]
+accepenas:   [41.08, 41.96, 49.18]
+acc_naswot:    [57.06, 53.52, 28.46]
+
+
+Image Net
+
+acc_alpha_0.1:   [27.73337, 25.9667, 24.2]
+acc_alpha_rank: [27.2667, 21.13337, 24.2]
+acc_kl_per_class:    [33.0, 22.9, 20.0333]
+accepenas:   [27.7333, 31.8667, 24.2]
+acc_naswot:    [33.5333, 21.1333, 30.1667]
+val_acc:    [28.1333, 26.667, 25.2]
+-----------------------------------------------------------------------------------------------------------------------
+500 samples
+
+Cifar100
+
+acc_alpha_0.1:   [81.555, 78.73, 83.41]
+acc_alpha_rank:     [81.555, 10.0, 72.41]
+acc_kl_per_class:    [82.545, 81.935, 67.75]
+accepenas:   [81.555, 78.73, 83.41]
+acc_naswot:    [74.505, 81.935, 72.41]
+
+Cifar100
+
+acc_alpha_0.1:   [41.3, 40.4, 47.52]
+acc_alpha_rank: [57.06, 55.86, 48.54]
+acc_kl_per_class:    [45.68, 47.7, 45.26]
+accepenas:   [41.3, 40.4, 47.52]
+acc_naswot:    [57.06, 55.86, 46.9]
+
+Image Net
+
+acc_alpha_0.1:   [24.2, 25.9, 27.667]
+acc_alpha_rank: [24.2, 0.8333, 24.5333]
+acc_kl_per_class:    [34.333, 20.6333, 16.4333]
+accepenas:   [24.2, 25.9, 16.7333]
+acc_naswot:    [30.1667, 25.9, 24.5333]
+
+-----------------------------------------------------------------------------------------------------------------------
+1000 samples
+
+Cifar10
+
+acc_alpha_0.1:   [81.555, 83.41, 79.92]
+acc_alpha_rank: [81.555, 68.855, 10.0]
+acc_kl_per_class:    [81.935, 83.605, 82.1]
+accepenas:   [81.555, 83.41, 79.92]
+acc_naswot:    [81.935, 72.41, 83.42]
+
+Cifar100
+
+acc_alpha_0.1:   [41.3, 44.52, 39.44]
+acc_alpha_rank:  [1.0, 1.0, 55.54]
+acc_kl_per_class:    [45.68, 45.26, 50.22]
+accepenas:   [41.3, 44.52, 39.44]
+acc_naswot:    [55.86, 46.9, 39.44]
+
+Image Net
+
+acc_alpha_0.1:   [24.2, 21.8667, 27.6]
+acc_alpha_rank:    [0.8333, 30.7, 0.8333]
+acc_kl_per_class:    [34.333, 16.4333, 21.4666]
+accepenas:   [24.2, 21.8667, 27.6]
+acc_naswot:    [25.9, 30.0667, 32.3667]
+
+acc_alpha = alpha * epenas + (1 - alpha) * naswot (I used alpha = 0.2, but because epenas varies a lot and in naswot te values are closer it still mainly follows epenas)
+acc_kl_per_class = score method from naswot but applied to each class (instead of looking for no correlation now I look for correlation)
+accepenas = original epenas
+acc_naswot = original naswot
+acc_rank = architecture with best combined ranking between naswot and epenas

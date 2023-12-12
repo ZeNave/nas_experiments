@@ -1,0 +1,1 @@
+python create_traindataset.py --dataset cifar10 --trainval --data_loc '../datasets/cifar10' --n_samples 15000 --api_loc '../datasets/NAS-Bench-201-v1_1-096897.pth' --batch_size 256 --convolution 0 --pca 1

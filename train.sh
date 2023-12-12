@@ -1,0 +1,1 @@
+python train.py --number_of_datasets 16 --batch_size 64 --n_hidden_layers 3 --size_of_hidden_layers 512 --convolution 0 --pca 1

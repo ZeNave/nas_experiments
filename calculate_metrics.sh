@@ -1,0 +1,1 @@
+python calculate_metrics.py --batch_size 256 --convolution 1
